@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import Navbar from "components/Navbar";
 
 function Ssg({ data }) {
@@ -36,10 +35,17 @@ function Ssg({ data }) {
 }
 
 export async function getStaticProps() {
-  console.log('hoge');
-  const res = await axios.get("https://nextjs-example-tan.vercel.app/api/datetime");
-  const data = await res.data;
-  return { props: { data } }
+  const now = new Date();
+  const data = {
+    datetime: now.getFullYear()
+            + '/' + ('0' + (now.getMonth() + 1)).slice(-2)
+            + '/' + ('0' + now.getDate()).slice(-2)
+            + ' ' + ('0' + now.getHours()).slice(-2)
+            + ':' + ('0' + now.getMinutes()).slice(-2)
+            + ':' + ('0' + now.getSeconds()).slice(-2)
+            + '(JST)'
+  };
+  return { props: { data }}
 }
 
 export default Ssg;
