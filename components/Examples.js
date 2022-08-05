@@ -10,10 +10,19 @@ export default function Examples() {
         </h2>
         <div>
           <div>
-            <i className="fas fa-link text-xs"></i> <Link href="/form">Single Page Form Example</Link>
+            <i className="fas fa-link text-xs"></i> <Link href="/form">Form Example 1</Link>
           </div>
           <div>
-            <i className="fas fa-link text-xs"></i> <Link href="/forms">Legacy Form Example</Link>
+            <i className="fas fa-link text-xs"></i> <Link href="/forms">Form Example 2</Link>
+          </div>
+          <div>
+            <i className="fas fa-link text-xs"></i> <Link href="/ssg">SSG Example</Link>
+          </div>
+          <div>
+            <i className="fas fa-link text-xs"></i> <Link href="/ssr">SSR Example</Link>
+          </div>
+          <div>
+            <i className="fas fa-link text-xs"></i> <Link href="/csr">CSR Example</Link>
           </div>
         </div>
       </div>

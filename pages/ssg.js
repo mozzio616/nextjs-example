@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Navbar from "components/Navbar";
 
 function Ssg({ data }) {
@@ -25,6 +26,14 @@ function Ssg({ data }) {
                   placeholder="date and time"
                   className="mb-3 px-3 py-3 placeholder-slate-300 text-slate-600 relative rounded text-sm border outline-none focus:outline-none focus:shadow-outline w-full bg-slate-200 border-slate-300"
                 />
+                <Link href="/ssg">
+                  <button
+                    className="bg-slate-700 text-white active:bg-slate-600 font-bold uppercase text-sm w-20 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                    type="button"
+                  >
+                    Update
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -43,7 +52,6 @@ export async function getStaticProps() {
             + ' ' + ('0' + now.getHours()).slice(-2)
             + ':' + ('0' + now.getMinutes()).slice(-2)
             + ':' + ('0' + now.getSeconds()).slice(-2)
-            + '(JST)'
   };
   return { props: { data }}
 }
